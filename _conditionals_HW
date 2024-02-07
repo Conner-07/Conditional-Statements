@@ -1,0 +1,58 @@
+def convert_to_letter_grade(percentage):
+    if percentage >= 0.9:
+        return 'A'
+    elif percentage >= 0.8:
+        return 'B'
+    elif percentage >= 0.7:
+        return 'C'
+    elif percentage >= 0.6:
+        return 'D'
+    elif percentage >= 0.0:
+        return 'F'
+    else:
+        return None
+
+def grade_conversion_program():
+    try:
+        percentage = float(input("Please enter your overall grade percentage (between 0 and 1): "))
+        if 0 <= percentage <= 1:
+            letter_grade = convert_to_letter_grade(percentage)
+            if letter_grade:
+                print("Your letter grade is:", letter_grade)
+            else:
+                print("Error: Invalid percentage entered.")
+        else:
+            print("Error: Percentage must be between 0 and 1.")
+    except ValueError:
+        print("Error: Invalid input. Please enter a numerical value.")
+
+
+grade_conversion_program()
+
+def get_days_in_month(month):
+    month_days = {
+        "January": 31,
+        "February": 28,
+        "March": 31,
+        "April": 30,
+        "May": 31,
+        "June": 30,
+        "July": 31,
+        "August": 31,
+        "September": 30,
+        "October": 31,
+        "November": 30,
+        "December": 31,
+    }
+    return month_days.get(month, None)
+
+def month_to_days_program():
+    month = input("Please enter the name of a month: ")
+    days = get_days_in_month(month)
+    if days is not None:
+        print(f"The expected number of days in {month} 2023 CE is: {days}")
+    else:
+        print("Error: Invalid month entered.")
+
+month_to_days_program()
+
